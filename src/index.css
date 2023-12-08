@@ -12,7 +12,7 @@ html {
 
 body {
   background: #001c30;
-  color: #f5e8c7;
+  color: #f5e8c7; /* Updated text color */
 }
 
 .App {
@@ -22,7 +22,7 @@ body {
 
 .sidebar {
   flex: 3;
-  border-right: 1px solid #64ccc5;
+  border-right: 1px solid #64ccc5; /* Updated border color */
 }
 
 .main {
@@ -36,7 +36,7 @@ body {
 .brand {
   font-size: 4rem;
   font-family: "Dancing Script", cursive;
-  color: #f5e8c7;
+  color: #f5e8c7; /* Updated text color */
 }
 
 .upperSide {
@@ -46,20 +46,19 @@ body {
 
 .upperSideTop {
   display: flex;
-  flex-direction: column;
   align-items: center;
   margin-bottom: 2.5rem;
 }
 
 .addBtn {
   height: 3.5rem;
-  margin-top: 1rem;
+  padding-right: 1rem;
 }
 
 .midBtn {
-  background: transparent;
+  background: transparent; /* Set background to transparent */
   border: none;
-  color: #f5e8c7;
+  color: #f5e8c7; /* Updated text color */
   padding: 1.5rem;
   font-size: 1.5rem;
   width: 25rem;
@@ -78,7 +77,6 @@ body {
 
 .query {
   display: flex;
-  flex-direction: column;
   align-items: center;
   background: transparent;
   padding: 1.5rem;
@@ -86,13 +84,13 @@ body {
   margin: 1rem auto;
   border-radius: 0.5rem;
   border: 1px solid rgba(98, 98, 98, 1);
-  color: #f5e8c7;
+  color: #f5e8c7; /* Updated text color */
   font-family: "Barlow", sans-serif;
   font-size: 1.46rem;
 }
 
 .query > img {
-  margin-bottom: 1rem;
+  margin-right: 2rem;
   object-fit: cover;
   height: 1.75rem;
   background: transparent;
@@ -103,7 +101,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 6rem 2rem;
+  margin: 6rem 10rem;
   margin-bottom: 0;
   font-family: "Ysabeau Office", sans-serif;
 }
@@ -115,7 +113,7 @@ body {
   width: 100%;
   max-width: 70rem;
   height: calc(100vh - 17rem);
-  background: transparent;
+  background: transparent; /* Set background to transparent */
 }
 
 .chat {
@@ -151,11 +149,11 @@ body {
 
 .inp {
   padding: 0.5rem;
-  background: transparent;
+  background: transparent; /* Updated background color */
   display: flex;
   align-items: center;
   border-radius: 0.5rem;
-  width: 100%;
+  width: 68rem;
   border-radius: 0.5rem;
   border: 1px solid rgba(98, 98, 98, 1);
 }
@@ -164,23 +162,23 @@ body {
   width: calc(100% - 3rem);
   outline: none;
   padding: 1.25rem;
-  color: #f5e8c7;
+  color: #f5e8c7; /* Updated text color */
   background: transparent;
 }
 
 .inp > input,
 .send {
-  background-color: transparent;
+  background-color: transparent; /* Updated button color */
   border: none;
   font-family: "Ysabeau Office", sans-serif;
-  color: #f5e8c7;
+  color: #f5e8c7; /* Updated text color */
 }
 
 .chatFooter > p {
   margin: 2rem 0;
   font-family: "Bungee Spice", sans-serif;
   font-size: 1.3rem;
-  color: #f5e8c7;
+  color: #f5e8c7; /* Updated text color */
 }
 
 /* Keyframes for typing animation */
@@ -223,8 +221,8 @@ body {
 
   .inp > input {
     width: 100%;
-    animation: typing 1.5s steps(40) infinite;
-    border: none;
+    animation: typing 1.5s steps(40) infinite; /* Adjust animation duration as needed */
+    border: none; /* Remove the border for a cleaner look */
     outline: none;
   }
 
@@ -236,6 +234,10 @@ body {
   .chat {
     margin: 1rem 0;
     overflow: hidden;
+  }
+
+  .chat p {
+    animation: typing 1.5s steps(40) infinite; /* Adjust animation duration as needed */
   }
 
   .brand {
