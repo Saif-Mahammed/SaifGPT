@@ -3,6 +3,7 @@ import Jokes from "./Common/Jokes";
 import Riddles from "./Common/Riddles"; // Import the Riddles array
 import responses from "./Responses";
 import stringSimilarity from "string-similarity";
+import FunFacts from "./Common/FunFacts";
 
 let lastResponseType = "";
 
@@ -21,22 +22,27 @@ const aiFunction = (input) => {
   if (
     inputLower.includes("fact") ||
     inputLower.includes("joke") ||
-    inputLower.includes("riddle")
+    inputLower.includes("riddle") ||
+    inputLower.includes("fun fact") // Include "fun fact" as a trigger
   ) {
-    // Include the new riddles in the random response selection
+    // Include the new fun facts in the random response selection
     const randomResponse = getRandomResponse(
       inputLower.includes("fact")
         ? Facts
         : inputLower.includes("joke")
         ? Jokes
-        : Riddles,
+        : inputLower.includes("riddle")
+        ? Riddles
+        : FunFacts,
       lastResponseType === "fact" ? lastFactIndex : undefined
     );
     lastResponseType = inputLower.includes("fact")
       ? "fact"
       : inputLower.includes("joke")
       ? "joke"
-      : "riddle";
+      : inputLower.includes("riddle")
+      ? "riddle"
+      : "fun fact";
     return randomResponse;
   }
 
@@ -56,7 +62,6 @@ const aiFunction = (input) => {
   lastResponseType = "unknown";
   return "I'm not sure how to respond to that. Can you ask another question?";
 };
-
 const findBestMatch = (input, responseArray) => {
   const similarityScores = responseArray.map((entry) =>
     stringSimilarity.compareTwoStrings(input, entry.question.toLowerCase())
@@ -81,31 +86,44 @@ const extractMathExpression = (input) => {
 
 const performMathOperation = (expression) => {
   try {
-    const [num1, operator, num2] = expression
-      .split(/[\s\?]/)
-      .filter(Boolean)
-      .map((str) => (isNaN(str) ? str : parseFloat(str)));
+    const lowerExpression = expression.toLowerCase();
 
-    if (isNaN(num1) || isNaN(num2)) {
+    // Check for square operation
+    if (lowerExpression.includes("square")) {
+      const number = parseFloat(expression.replace(/[^0-9.]/g, ""));
+      if (!isNaN(number)) {
+        const result = square(number);
+        return `The square of ${number} is: ${result}`;
+      }
+      return "Please provide a valid number for squaring.";
+    }
+
+    // Check for other math operations
+    const match = expression.match(
+      /(\d+(\.\d+)?)\s*([\+\-\*\/^])\s*(\d+(\.\d+)?)/
+    );
+    if (!match) {
       return "Invalid math operation. Please provide valid numbers.";
     }
+
+    const [_, num1, operator, num2] = match;
 
     let result;
     switch (operator) {
       case "+":
-        result = add(num1, num2);
+        result = add(parseFloat(num1), parseFloat(num2));
         break;
       case "-":
-        result = subtract(num1, num2);
+        result = subtract(parseFloat(num1), parseFloat(num2));
         break;
       case "*":
-        result = multiply(num1, num2);
+        result = multiply(parseFloat(num1), parseFloat(num2));
         break;
       case "/":
-        result = divide(num1, num2);
+        result = divide(parseFloat(num1), parseFloat(num2));
         break;
       case "^": // Handle power operations
-        result = Math.pow(num1, num2);
+        result = Math.pow(parseFloat(num1), parseFloat(num2));
         break;
       default:
         return "Invalid math operation. Please provide a valid operator.";
