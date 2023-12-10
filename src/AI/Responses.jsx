@@ -779,7 +779,7 @@ const Responses = [
   {
     question: "how can users provide feedback on SaifGPT",
     response: [
-      "Users can provide feedback on SaifGPT by sharing their thoughts and suggestions through the platform where SaifGPT is deployed. Feedback is valuable for enhancing its performance and addressing user needs.",
+      "Users can provide feedback on SaifGPT by sharing their thoughts and suggestions through this email saifmahammed@hotmail.com. Feedback is valuable for enhancing its performance and addressing user needs.",
       "Feedback from users is highly valuable for improving SaifGPT. Users can share their thoughts, suggestions, and concerns through the platform where SaifGPT is accessible.",
       "User feedback plays a crucial role in refining SaifGPT. Users can contribute by sharing their thoughts, suggestions, and experiences with SaifGPT through the respective platform.",
     ],

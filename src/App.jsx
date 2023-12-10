@@ -20,7 +20,7 @@ const TypingEffect = ({ text }) => {
       if (currentText === text) {
         clearInterval(intervalId);
       }
-    }, 30);
+    }, 18);
 
     return () => clearInterval(intervalId);
   }, [text]);
@@ -76,11 +76,7 @@ const App = () => {
           <div className="upperSideBottom">
             <button className="query">
               <img src={messageIcon} alt="Query" />
-              Creator Saif Mahammed
-            </button>
-            <button className="query">
-              <img src={messageIcon} alt="query" />
-              Deployed on Vercel.com
+              Creator Saif .M
             </button>
           </div>
         </div>

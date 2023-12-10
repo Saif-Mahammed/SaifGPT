@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Bungee+Spice&family=Comfortaa&family=Dancing+Script&family=Exo+2&family=Lilita+One&family=Permanent+Marker&family=Raleway&family=Source+Code+Pro&family=Space+Grotesk&family=Ysabeau+Office&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Bungee+Spice&family=Comfortaa&family=Dancing+Script&family=Exo+2&family=Josefin+Sans&family=Kalnia&family=Lilita+One&family=Permanent+Marker&family=Raleway&family=Source+Code+Pro&family=Space+Grotesk&family=Ysabeau+Office&display=swap");
 
 * {
   margin: 0;
@@ -11,8 +11,8 @@ html {
 }
 
 body {
-  background: #001c30;
-  color: #f5e8c7; /* Updated text color */
+  background: #071952; /* Updated background color */
+  color: #f0ece5; /* Updated text color to white */
 }
 
 .App {
@@ -22,7 +22,8 @@ body {
 
 .sidebar {
   flex: 3;
-  border-right: 1px solid #64ccc5; /* Updated border color */
+  border-right: 1px solid #0b666a; /* Updated border color */
+  background: #071952;
 }
 
 .main {
@@ -36,7 +37,7 @@ body {
 .brand {
   font-size: 4rem;
   font-family: "Dancing Script", cursive;
-  color: #f5e8c7; /* Updated text color */
+  color: #f0ece5; /* Updated text color to white */
 }
 
 .upperSide {
@@ -58,7 +59,7 @@ body {
 .midBtn {
   background: transparent; /* Set background to transparent */
   border: none;
-  color: #f5e8c7; /* Updated text color */
+  color: #f0ece5; /* Updated text color to white */
   padding: 1.5rem;
   font-size: 1.5rem;
   width: 25rem;
@@ -68,11 +69,12 @@ body {
   margin: 0 auto;
   margin-bottom: 3rem;
   border-radius: 0.5rem;
-  font-family: "Barlow", sans-serif;
+  font-family: "Kalnia", serif;
   font-size: 1.7rem;
   border-radius: 0.5rem;
   border: 1px solid rgba(98, 98, 98, 1);
   cursor: pointer;
+  text-align: center;
 }
 
 .query {
@@ -84,9 +86,10 @@ body {
   margin: 1rem auto;
   border-radius: 0.5rem;
   border: 1px solid rgba(98, 98, 98, 1);
-  color: #f5e8c7; /* Updated text color */
-  font-family: "Barlow", sans-serif;
+  color: #f0ece5; /* Updated text color to white */
+  font-family: "Kalnia", serif;
   font-size: 1.46rem;
+  text-align: left;
 }
 
 .query > img {
@@ -103,7 +106,7 @@ body {
   align-items: center;
   margin: 6rem 10rem;
   margin-bottom: 0;
-  font-family: "Ysabeau Office", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .chats {
@@ -119,7 +122,7 @@ body {
 .chat {
   margin: 1rem;
   padding: 2rem 3rem;
-  font-size: 1.39rem;
+  font-size: 1.36rem;
   display: flex;
   align-items: flex-start;
   text-align: justify;
@@ -133,9 +136,11 @@ body {
 }
 
 .bot {
-  background: rgb(23, 107, 135);
+  background: rgb(7, 25, 82); /* Updated background color */
   width: fit-content;
   border-radius: 0.5rem;
+  background: #fff6e0;
+  color: black;
 }
 
 .chatFooter {
@@ -162,7 +167,7 @@ body {
   width: calc(100% - 3rem);
   outline: none;
   padding: 1.25rem;
-  color: #f5e8c7; /* Updated text color */
+  color: #f0ece5; /* Updated text color to white */
   background: transparent;
 }
 
@@ -170,15 +175,15 @@ body {
 .send {
   background-color: transparent; /* Updated button color */
   border: none;
-  font-family: "Ysabeau Office", sans-serif;
-  color: #f5e8c7; /* Updated text color */
+  font-family: "Josefin Sans", sans-serif;
+  color: #f0ece5; /* Updated text color to white */
 }
 
 .chatFooter > p {
   margin: 2rem 0;
   font-family: "Bungee Spice", sans-serif;
   font-size: 1.3rem;
-  color: #f5e8c7; /* Updated text color */
+  color: #f0ece5; /* Updated text color to white */
 }
 
 /* Keyframes for typing animation */
