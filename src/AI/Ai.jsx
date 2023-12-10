@@ -1,18 +1,8 @@
 import Facts from "./Common/Facts";
 import Jokes from "./Common/Jokes";
 import responses from "./Responses";
-import {
-  add,
-  subtract,
-  multiply,
-  divide,
-  square,
-  squareRoot,
-  cube,
-  cubeRoot,
-} from "./Math/Math"; // Import new math operations
+import stringSimilarity from "string-similarity"; // Import a string similarity library, you may need to install it
 
-let lastFactIndex = -1;
 let lastResponseType = "";
 
 const aiFunction = (input) => {
@@ -36,17 +26,37 @@ const aiFunction = (input) => {
     return randomResponse;
   }
 
-  for (const entry of responses) {
-    if (inputLower.includes(entry.question)) {
-      const randomResponse =
-        entry.response[Math.floor(Math.random() * entry.response.length)];
-      lastResponseType = "response";
-      return randomResponse;
-    }
+  let bestMatch = findBestMatch(inputLower, responses);
+
+  if (bestMatch.rating > 0.7) {
+    const matchedResponse =
+      responses[bestMatch.bestMatchIndex].response[
+        Math.floor(
+          Math.random() * responses[bestMatch.bestMatchIndex].response.length
+        )
+      ];
+    lastResponseType = "response";
+    return matchedResponse;
   }
 
   lastResponseType = "unknown";
   return "I'm not sure how to respond to that. Can you ask another question?";
+};
+
+const findBestMatch = (input, responseArray) => {
+  const similarityScores = responseArray.map((entry) =>
+    stringSimilarity.compareTwoStrings(input, entry.question.toLowerCase())
+  );
+
+  const bestMatchIndex = similarityScores.indexOf(
+    Math.max(...similarityScores)
+  );
+  const bestMatch = {
+    bestMatchIndex,
+    rating: similarityScores[bestMatchIndex],
+  };
+
+  return bestMatch;
 };
 
 const extractMathExpression = (input) => {
