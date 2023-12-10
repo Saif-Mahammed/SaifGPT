@@ -1,7 +1,8 @@
 import Facts from "./Common/Facts";
 import Jokes from "./Common/Jokes";
+import Riddles from "./Common/Riddles"; // Import the Riddles array
 import responses from "./Responses";
-import stringSimilarity from "string-similarity"; // Import a string similarity library, you may need to install it
+import stringSimilarity from "string-similarity";
 
 let lastResponseType = "";
 
@@ -17,12 +18,25 @@ const aiFunction = (input) => {
     }
   }
 
-  if (inputLower.includes("fact") || inputLower.includes("joke")) {
+  if (
+    inputLower.includes("fact") ||
+    inputLower.includes("joke") ||
+    inputLower.includes("riddle")
+  ) {
+    // Include the new riddles in the random response selection
     const randomResponse = getRandomResponse(
-      inputLower.includes("fact") ? Facts : Jokes,
+      inputLower.includes("fact")
+        ? Facts
+        : inputLower.includes("joke")
+        ? Jokes
+        : Riddles,
       lastResponseType === "fact" ? lastFactIndex : undefined
     );
-    lastResponseType = inputLower.includes("fact") ? "fact" : "joke";
+    lastResponseType = inputLower.includes("fact")
+      ? "fact"
+      : inputLower.includes("joke")
+      ? "joke"
+      : "riddle";
     return randomResponse;
   }
 
