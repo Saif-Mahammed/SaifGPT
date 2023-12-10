@@ -6,14 +6,11 @@ import {
   subtract,
   multiply,
   divide,
-  linearEquation,
-  sin,
-  cos,
-  tan,
-  log,
+  square,
   squareRoot,
+  cube,
   cubeRoot,
-} from "./Math/Math";
+} from "./Math/Math"; // Import new math operations
 
 let lastFactIndex = -1;
 let lastResponseType = "";
@@ -53,7 +50,7 @@ const aiFunction = (input) => {
 };
 
 const extractMathExpression = (input) => {
-  const regex = /(\d+(\.\d+)?)\s*([\+\-\*\/])\s*(\d+(\.\d+)?)/;
+  const regex = /(\d+(\.\d+)?)\s*([\+\-\*\/^])\s*(\d+(\.\d+)?)/; // Include '^' for power operations
   const match = input.match(regex);
   return match ? match[0] : null;
 };
@@ -82,6 +79,9 @@ const performMathOperation = (expression) => {
         break;
       case "/":
         result = divide(num1, num2);
+        break;
+      case "^": // Handle power operations
+        result = Math.pow(num1, num2);
         break;
       default:
         return "Invalid math operation. Please provide a valid operator.";

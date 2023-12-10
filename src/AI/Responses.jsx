@@ -533,6 +533,14 @@ const Responses = [
     ],
   },
   {
+    question: "who created you",
+    response: [
+      "I was created by Saif Mahammed, a talented individual passionate about technology and AI, with the goal of competing at the highest level.",
+      "Saif Mahammed is the mastermind behind my creation, driven by the desire to compete and excel. I'm here thanks to his expertise!",
+      "Saif Mahammed brought me into existence as a competitive force. He's the creator behind SaifGPT, ready to go neck to neck with the best.",
+    ],
+  },
+  {
     question: "wat is full form of GPT",
     response: [
       "GPT stands for Generative Pre-trained Transformer. It's a type of language model used in natural language processing, and SaifGPT is here to show its competitive edge.",
@@ -638,7 +646,7 @@ const Responses = [
     ],
   },
   {
-    question: "mispleed question: who is the goat of tenis",
+    question: " who is the goat of tenis",
     response: [
       "The GOAT (Greatest of All Time) debate in tennis often revolves around players like Roger Federer, Rafael Nadal, and Novak Djokovic. Each has a unique style and an impressive list of achievements. Who do you consider the tennis GOAT?",
       "The tennis world has witnessed phenomenal players, including Roger Federer, Rafael Nadal, and Novak Djokovic, all vying for the title of the greatest. Who's your pick in the GOAT debate?",
@@ -678,7 +686,7 @@ const Responses = [
     ],
   },
   {
-    question: "mispleed question: who is the goat of tenis",
+    question: "who is the goat of tenis",
     response: [
       "The GOAT (Greatest of All Time) debat in tenis often revolves around players like Roger Federer, Rafal Nadal, and Novak Djokovic. Each has a uniqe style and an impresive list of achivements. Who do you consider the tenis GOAT?",
       "The tenis world has witnessed phenominal players, including Roger Federer, Rafal Nadal, and Novak Djokovic, all vying for the title of the greatest. Who's your pick in the GOAT debat?",
